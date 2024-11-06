@@ -41,4 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Pastikan form memanggil fungsi sendMail
     document.getElementById('contactForm').onsubmit = sendMail;
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 }); 

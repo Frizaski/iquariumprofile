@@ -1449,3 +1449,7 @@ video {
 a {
   background-color: transparent; /* Pastikan background transparan */
 }
+
+html {
+    scroll-behavior: smooth;
+}
