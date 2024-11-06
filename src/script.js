@@ -20,4 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form'); // Pastikan ini adalah form yang benar
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari reload halaman
+
+            emailjs.sendForm('service_2snthmg', 'template_bawnm05', this)
+              .then((result) => {
+                alert('Email berhasil dikirim!');
+              }, (error) => {
+                alert('Gagal mengirim email, coba lagi.');
+              });
+        });
+    });
 }); 
