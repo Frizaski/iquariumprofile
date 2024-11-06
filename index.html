@@ -179,11 +179,11 @@
     </section>
     <!-- Features Section Close -->
     <!-- Our Team Section -->
-    <section id="team" class="py-14 lg:py-24">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="mb-24">
+    <section id="team" class="min-h-screen flex items-center justify-center py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
+            <div class="mb-16">
                 <h2 class="font-manrope text-4xl text-center font-bold text-gray-900 mb-6">Meet Our Team</h2>
-                <p class="text-lg text-gray-500 text-center">Kami adalah tim yang berdedikasi untuk mengembangkan platform  <br>
+                <p class="text-lg text-gray-500 text-center">Kami adalah tim yang berdedikasi untuk mengembangkan platform <br>
                     iQuarium dengan penuh semangat dan inovasi</p>
             </div>
             
@@ -357,8 +357,15 @@
                    
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-scrollbar"></div>
                 
+            </div>
+
+            <!-- Dots -->
+            <div class="flex justify-center gap-2 mt-4">
+                <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+                <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                <!-- ... dots lainnya ... -->
             </div>
         </div>
     </section>
@@ -366,7 +373,7 @@
 
     <!-- History Section -->
     <section id="history" class="min-h-screen flex items-center justify-center py-16">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20"> <!-- Tambahkan pt-20 di sini -->
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Our History</h2>
@@ -443,7 +450,7 @@
 
    <!-- Contact Section -->
 <section id="contact" class="min-h-screen flex items-center justify-center py-16 bg-white text-gray-900">
-    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20"> <!-- Tambahkan pt-20 di sini -->
         <!-- Section Header -->
         <div class="text-center mb-20">
             <h2 class="text-4xl font-bold mt-2 mb-4 text-indigo-600">Contact Us</h2>
@@ -459,12 +466,12 @@
                 <!-- Left Column - Contact Form -->
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-indigo-600 mb-6">Send us a Message</h3>
-                    <form class="space-y-6" action="mailto:frizazkii@gmail.com?subject=Contact Form Submission" method="post" enctype="text/plain">
+                    <form action="https://formspree.io/f/xpzvgkrw" method="POST" class="space-y-6">
                         <div class="mb-4">
                             <input 
                                 type="text" 
+                                name="name"
                                 placeholder="Your Name" 
-                                name="Name:"
                                 required
                                 class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
                             >
@@ -472,15 +479,15 @@
                         <div class="mb-4">
                             <input 
                                 type="email" 
+                                name="email"
                                 placeholder="Email Address" 
-                                name="Email:"
                                 required
                                 class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
                             >
                         </div>
                         <div class="mb-4">
                             <textarea 
-                                name="Message:"
+                                name="message"
                                 rows="6" 
                                 placeholder="Your Message" 
                                 required
@@ -493,7 +500,6 @@
                             class="text-white bg-primary ease-in-out hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
                             Send Message
                         </button>
-                    
                     </form>
                     <p class="text-center font-bold" style="font-size: 20px; margin-top: 20px;">FIND US ON</p>
                     <div class="flex justify-center mt-8" style="gap: 48px;">
