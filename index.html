@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
     <title>iQuarium</title>
 
 </head>
@@ -450,8 +449,8 @@
     <!-- History Section Close -->
 
    <!-- Contact Section -->
-<section id="contact" class="min-h-screen flex items-center justify-center py-16 bg-white text-gray-900">
-    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20"> <!-- Tambahkan pt-20 di sini -->
+   <section id="contact" class="min-h-screen flex items-center justify-center py-16 bg-white text-gray-900">
+    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20">
         <!-- Section Header -->
         <div class="text-center mb-20">
             <h2 class="text-4xl font-bold mt-2 mb-4 text-indigo-600">Contact Us</h2>
@@ -463,70 +462,47 @@
 
         <!-- Contact Content -->
         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 p-8">
-           
-                <!-- Left Column - Contact Form -->
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-indigo-600 mb-6">Send us a Message</h3>
-                    <h3 class="text-2xl font-bold text-indigo-600 mb-12">Send us a Message</h3>
-                    <form id="contactForm" class="space-y-6">
-                        <div class="mb-4">
-                            <input 
-                                type="text" 
-                                name="user_name"
-                                id="user_email"
-                                placeholder="Your Name" 
-                                required
-                                class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
-                            >
-                        </div>
-                        <div class="mb-4">
-                            <input 
-                                type="email" 
-                                name="user_email"
-                                id="user_email"
-                                placeholder="Email Address" 
-                                required
-                                class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
-                            >
-                        </div>
-                        <div class="mb-4">
-                            <textarea 
-                                name="message"
-                                name="message"
-                                rows="6" 
-                                placeholder="Your Message" 
-                                required
-                                class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
-                            ></textarea>
-                        </div>
-                        
-                        <div class="flex justify-center">
-                            <button onclick="sendMail()"
-                                type="submit"
-                                class="text-white bg-primary ease-in-out hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                    <p class="text-center font-bold" style="font-size: 20px; margin-top: 20px;">FIND US ON</p>
-                    <div class="flex justify-center mt-8" style="gap: 48px;">
-                        <a href="http://anomalii.my.id/signin" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-google text-2xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
-                        </a>
-                        <a href="https://github.com/Frizaski/iquariumprofile" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github text-2xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
-                        </a>
-                        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-google-play text-2xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
-                        </a>
-                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-app-store text-2xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
-                        </a>
+            <!-- Left Column - Contact Form -->
+            <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-6">Send us a Message</h3>
+                <form id="contactForm" class="space-y-6">
+                    <div class="mb-4">
+                        <input 
+                            type="text" 
+                            name="user_name"
+                            placeholder="Your Name" 
+                            required
+                            class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
+                        >
                     </div>
-                </div>
-             </div>
+                    <div class="mb-4">
+                        <input 
+                            type="email" 
+                            name="user_email"
+                            placeholder="Email Address" 
+                            required
+                            class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
+                        >
                     </div>
-                </div>
+                    <div class="mb-4">
+                        <textarea 
+                            name="message"
+                            rows="6" 
+                            placeholder="Your Message" 
+                            required
+                            class="w-full p-4 border border-indigo-300 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors text-gray-900 placeholder-gray-500"
+                        ></textarea>
+                    </div>
+                    
+                    <div class="flex justify-center">
+                        <button
+                            type="submit"
+                            class="text-white bg-primary ease-in-out hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <!-- ... -->
             </div>
         </div>
     </div>
@@ -534,32 +510,24 @@
 <!-- Contact Section Close -->
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
-  (function(){
-    emailjs.init("dsuLOXyydWGukQ9sc"); // User ID Anda
-  })();
-
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah form dari reload halaman
-
-    // Mengambil data dari form
-    var templateParams = {
-        user_name: this.user_name.value,
-        user_email: this.user_email.value,
-        message: this.message.value
-    };
-
-    // Mengirim email menggunakan EmailJS
-    emailjs.send('service_2snthmg', 'template_bawnm05', templateParams)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         alert('Pesan berhasil dikirim!');
-      }, function(error) {
-         console.log('FAILED...', error);
-         alert('Pesan gagal dikirim, silakan coba lagi.');
-      });
-  });
+   (function(){
+      emailjs.init("dsuLOXyydWGukQ9sc");
+   })();
 </script>
+<script type="text/javascript">
+    function sendMail(event) {
+        event.preventDefault(); // Mencegah form dari reload halaman
 
+        emailjs.sendForm('service_2snthmg', 'template_bawnm05', '#contactForm')
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Pesan berhasil dikirim!');
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('Pesan gagal dikirim, silakan coba lagi.');
+            });
+    }
+</script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
     
