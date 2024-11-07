@@ -72,8 +72,23 @@
     <!-- Navbar Close -->
 
     <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center py-16 mt-16">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+    <section id="home" class="min-h-screen flex items-center justify-center py-16" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Top right blob -->
+            <div class="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-30" 
+                 style="background: linear-gradient(45deg, #818CF8 0%, #6366F1 100%);"></div>
+            
+            <!-- Bottom left blob -->
+            <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl opacity-20" 
+                 style="background: linear-gradient(225deg, #818CF8 0%, #6366F1 100%);"></div>
+            
+            <!-- Center small blob -->
+            <div class="absolute top-1/2 left-1/4 w-40 h-40 rounded-full blur-3xl opacity-25" 
+                 style="background: linear-gradient(135deg, #A5B4FC 0%, #818CF8 100%);"></div>
+        </div>
+
+        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto relative">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left Column -->
                 <div class="flex flex-col text-center md:text-left order-1">
@@ -118,23 +133,33 @@
 
     <!-- About Section -->
     <section id="about" class="min-h-screen flex items-center justify-center py-16">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto relative">
             <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
                 <!-- Left Column - Text Content -->
                 <div class="w-full flex-col justify-start lg:items-start items-center gap-6 inline-flex">
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
-                        <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Jelajahi Keindahan Akuarium Bersama Kami</h2>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">iQuarium adalah platform yang menyediakan wadah bagi para pecinta ikan hias dengan informasi lengkap dan menarik, tips perawatan, dan komunitas berpengalaman. Temukan beragam spesies ikan hias, cara menjaga ekosistem akuarium yang sehat, serta produk terbaik untuk memaksimalkan keindahan akuarium Anda.</p>
+                        <!-- Subtitle -->
+                        <h2 class="text-primary text-4xl font-bold font-manrope leading-normal lg:text-start text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">
+                            Jelajahi Keindahan Akuarium Bersama Kami
+                        </h2>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                            iQuarium adalah platform yang menyediakan wadah bagi para pecinta ikan hias dengan informasi lengkap dan menarik, tips perawatan, dan komunitas berpengalaman. Temukan beragam spesies ikan hias, cara menjaga ekosistem akuarium yang sehat, serta produk terbaik untuk memaksimalkan keindahan akuarium Anda.
+                        </p>
                     </div>
-                    <button class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
-                        <span class="px-1.5 text-white text-sm font-medium leading-6">Get Started</span>
+                    <button class="sm:w-fit w-full px-3.5 py-2 bg-primary hover:opacity-80 transition-all duration-700 ease-in-out rounded-lg shadow-lg justify-center items-center flex group">
+                        <span class="px-1.5 text-white text-sm font-medium leading-6 flex items-center">
+                            Get Started 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
                     </button>
                 </div>
 
                 <!-- Right Column - Video -->
-                <div class="w-full flex justify-center lg:justify-end">
+                <div class="w-full flex justify-center lg:justify-end relative">
                     <video 
-                        class="w-full max-w-[500px] rounded-3xl object-cover" 
+                        class="w-full max-w-[500px] rounded-3xl object-cover relative z-10 shadow-xl" 
                         autoplay 
                         loop 
                         muted 
@@ -191,7 +216,7 @@
     <!-- Features Section Close -->
     <!-- Our Team Section -->
     <section id="team" class="min-h-screen flex items-center justify-center py-8 sm:py-16">
-        <div class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 sm:pt-20">
+        <div class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32">
             <!-- Header Section -->
             <div class="flex flex-col items-center justify-center w-full">
                 <div class="mb-8 sm:mb-16">
@@ -410,7 +435,7 @@
 
     <!-- History Section -->
     <section id="history" class="min-h-screen flex items-center justify-center py-16">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20">
+        <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-15">
             <div class="w-full grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Column - Image -->
                 <div class="flex items-center justify-center">
