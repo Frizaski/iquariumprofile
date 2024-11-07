@@ -82,7 +82,7 @@
                     </h1>
                     
                     <h2 class="mt-6 text-lg md:text-xl text-gray-600">
-                        Dapatkan kemudahan dalam memelihara ikan hias dalam satu aplikasi
+                        Dapatkan kemudahan dalam budidaya ikan hias dalam satu aplikasi
                     </h2>
 
                     <div class="mt-8 flex flex-col md:flex-row items-center md:items-start gap-4">
@@ -120,16 +120,29 @@
     <section id="about" class="min-h-screen flex items-center justify-center py-16">
         <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
+                <!-- Left Column - Text Content -->
                 <div class="w-full flex-col justify-start lg:items-start items-center gap-6 inline-flex">
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                         <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Jelajahi Keindahan Akuarium Bersama Kami</h2>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">iQuarium adalah platform yang menghubungkan pecinta ikan hias dengan informasi lengkap, tips perawatan, dan komunitas berpengalaman. Temukan beragam spesies ikan hias, cara menjaga ekosistem akuarium yang sehat, serta produk terbaik untuk memaksimalkan keindahan akuarium Anda. </p>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">iQuarium adalah platform yang menyediakan wadah bagi para pecinta ikan hias dengan informasi lengkap dan menarik, tips perawatan, dan komunitas berpengalaman. Temukan beragam spesies ikan hias, cara menjaga ekosistem akuarium yang sehat, serta produk terbaik untuk memaksimalkan keindahan akuarium Anda.</p>
                     </div>
                     <button class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
                         <span class="px-1.5 text-white text-sm font-medium leading-6">Get Started</span>
                     </button>
                 </div>
-                <img class="lg:mx-0 mx-auto h-full rounded-3xl object-cover" src="./dist/image/akuarium_ikan_hias.jpg" alt="about Us image" />
+
+                <!-- Right Column - Video -->
+                <div class="w-full flex justify-center lg:justify-end">
+                    <video 
+                        class="w-full max-w-[500px] rounded-3xl object-cover" 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline>
+                        <source src="./dist/video/iquarium.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     </section>
@@ -177,15 +190,17 @@
     </section>
     <!-- Features Section Close -->
     <!-- Our Team Section -->
-    <section id="team" class="min-h-screen flex items-center justify-center py-16">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
-            <div class="w-full flex-col justify-start items-center gap-11 inline-flex">
-                <div class="w-full flex-col justify-start items-center gap-2.5 flex">
-                    <h2 class="font-manrope text-4xl text-center font-bold text-gray-900">Meet Our Team</h2>
-                    <p class="max-w-4xl mx-auto text-center text-gray-500 text-lg font-normal leading-8">Kami adalah tim yang berdedikasi untuk  mengembangkan platform <br>
-                        iQuarium dengan penuh semangat dan inovasi</p>
+    <section id="team" class="min-h-screen flex items-center justify-center py-8 sm:py-16">
+        <div class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 sm:pt-20">
+            <!-- Header Section -->
+            <div class="flex flex-col items-center justify-center w-full">
+                <div class="mb-8 sm:mb-16">
+                    <h2 class="font-manrope text-3xl sm:text-4xl text-center font-bold text-gray-900 mb-4 sm:mb-6">Meet Our Team</h2>
+                    <p class="text-base sm:text-lg text-gray-500 text-center max-w-[95%] sm:max-w-[90%] mx-auto md:max-w-none">
+                        Kami adalah tim yang berdedikasi untuk mengembangkan platform iQuarium dengan penuh semangat dan inovasi
+                    </p>
                 </div>
-            </div>
+            </div> 
             
             <!-- Slider Wrapper -->
             <div class="teamswiper relative">
@@ -409,7 +424,7 @@
                         <div class="text-center mb-20"></div>
                         <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start"style="text-align: center;">Our History</h2>
                         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                            Kami, lima mahasiswa dengan berbagai latar belakang kemampuan dan keahlian, akhirnya bertemu dalam satu kelompok. Awalnya, masing-masing dari kami tidak begitu mengenal dunia programmer. Namun, dengan semangat yang sama untuk belajar dan menghadapi tantangan, kami mulai merancang langkah-langkah untuk menghadapi proyek besar ini. Kami menamai kelompok kami "Anomali" — terinspirasi dari ide bahwa kita ingin menciptakan sesuatu yang unik, berbeda, dan menonjol dari yang lain. Kami ingin proyek ini menjadi "anomali" dalam artian yang positif, sesuatu yang tidak mudah ditemukan di antara proyek-proyek mahasiswa lainnya.unia perdagangan dan pemeliharaan ikan hias.
+                            Kami adalah mahasiswa yang bergerak di bidang <em>Software Engineering</em>. Kami memiliki latar belakang yang berbeda-beda, namun kami menyatukan ide dan pemikiran kami dan terbentuklah kelompok <em>Anomali</em>. Anomali memiliki tugas untuk menyeselesaikan masalah bagi para pembudidaya ikan hias yang ingin memulai bisnis mereka, yang dimana permasalah tersebut tedapat pada minimnya informasi mengenai budidaya ikan hias yang baik dan benar. Hal tersebut menjadi tantangan kami namun kami berdedikasi untuk menyediakan informasi yang lengkap dan benar mengenai budidaya ikan hias, mulai dari pelatihan awal hingga menyediakan kebutuhan pembudidayaan.
                         </p>
                     </div>
                 </div>
