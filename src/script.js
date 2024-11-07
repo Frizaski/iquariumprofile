@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
     });
+
+    // Inisialisasi EmailJS
     emailjs.init("dsuLOXyydWGukQ9sc");
 
     // Fungsi untuk mengirim email
@@ -50,5 +52,65 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
+    });
+
+    // Swiper initialization
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: -10,
+        slidesPerView: 3,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 32,
+        thumbs: {
+            swiper: swiper,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    var teamSwiper = new Swiper(".teamswiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        effect: "coverflow",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        speed: 800,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            }
+        }
     });
 }); 

@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
-    <script src="src/script.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <title>iQuarium</title>
-
 </head>
 <body>
     <!-- Navbar Open -->
@@ -19,7 +17,7 @@
                 <img src="./dist/image/iquarium-logo.png" class="h-12" alt="iQuarium Logo">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" class="text-white bg-primary ease-in-out hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
+                <button type="button" class="text-white bg-primary btn-hover-effect font-medium rounded-lg text-sm px-4 py-2 text-center">
                     Get started
                 </button>
                 <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
@@ -51,7 +49,7 @@
                     </li>
                     <li>
                         <a href="#team" class="block py-2 px-3 text-black hover:text-primary rounded md:hover:bg-transparent md:p-0 relative group">
-                            Our Team
+                            Team
                             <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                         </a>
                     </li>
@@ -122,7 +120,7 @@
     <section id="about" class="min-h-screen flex items-center justify-center py-16">
         <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
-                <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
+                <div class="w-full flex-col justify-start lg:items-start items-center gap-6 inline-flex">
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                         <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Jelajahi Keindahan Akuarium Bersama Kami</h2>
                         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">iQuarium adalah platform yang menghubungkan pecinta ikan hias dengan informasi lengkap, tips perawatan, dan komunitas berpengalaman. Temukan beragam spesies ikan hias, cara menjaga ekosistem akuarium yang sehat, serta produk terbaik untuk memaksimalkan keindahan akuarium Anda. </p>
@@ -142,7 +140,7 @@
         <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full flex-col justify-start items-center lg:gap-11 gap-8 inline-flex">
                 <div class="w-full flex-col justify-start items-center gap-2.5 flex">
-                    <h2 class="text-center text-gray-900 text-3xl font-bold font-manrope leading-normal">Features</h2>
+                    <h2 class="text-center text-gray-900 text-4xl font-bold font-manrope leading-normal">Features</h2>
                     <p class="max-w-4xl mx-auto text-center text-gray-500 text-lg font-normal leading-8">iQuarium memiliki fitur-fitur yang dirancang khusus  untuk  memenuhi kebutuhan para penggemar ikan hias, pembudidaya, dan pemula yang ingin memulai hobi merawat akuarium. </p>
                 </div>
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-start items-start gap-8">
@@ -181,10 +179,12 @@
     <!-- Our Team Section -->
     <section id="team" class="min-h-screen flex items-center justify-center py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
-            <div class="mb-16">
-                <h2 class="font-manrope text-4xl text-center font-bold text-gray-900 mb-6">Meet Our Team</h2>
-                <p class="text-lg text-gray-500 text-center">Kami adalah tim yang berdedikasi untuk  mengembangkan platform <br>
-                    iQuarium dengan penuh semangat dan inovasi</p>
+            <div class="w-full flex-col justify-start items-center gap-11 inline-flex">
+                <div class="w-full flex-col justify-start items-center gap-2.5 flex">
+                    <h2 class="font-manrope text-4xl text-center font-bold text-gray-900">Meet Our Team</h2>
+                    <p class="max-w-4xl mx-auto text-center text-gray-500 text-lg font-normal leading-8">Kami adalah tim yang berdedikasi untuk  mengembangkan platform <br>
+                        iQuarium dengan penuh semangat dan inovasi</p>
+                </div>
             </div>
             
             <!-- Slider Wrapper -->
@@ -434,8 +434,8 @@
         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 p-8">
             <!-- Left Column - Contact Form -->
             <div class="space-y-6">
-                <h3 class="text-2xl font-bold text-indigo-600 mb-6">Send us a Message</h3>
-                <form id="contactForm" class="space-y-6">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-4 text-left">Send us a Message</h3>
+                <form id="contactForm" class="space-y-6 mt-4">
                     <div class="mb-4">
                         <input 
                             type="text" 
@@ -467,7 +467,7 @@
                     <div class="flex justify-center">
                         <button
                             type="submit"
-                            class="text-white bg-primary ease-in-out hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
+                            class="text-white bg-primary btn-hover-effect font-medium rounded-lg text-sm px-4 py-2 text-center">
                             Send Message
                         </button>
                     </div>
@@ -498,269 +498,9 @@
     </div>
 </footer>
 <!-- Footer Close -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("dsuLOXyydWGukQ9sc");
-   })();
-</script>
-<script type="text/javascript">
-    function sendMail(event) {
-        event.preventDefault(); // Mencegah form dari reload halaman
-
-        emailjs.sendForm('service_2snthmg', 'template_bawnm05', '#contactForm')
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Pesan berhasil dikirim!');
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert('Pesan gagal dikirim, silakan coba lagi.');
-            });
-    }
-</script>
-</body>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
-    
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        spaceBetween: -10,
-        slidesPerView: 3,
-        watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-        loop: true,
-        spaceBetween: 32,
-        thumbs: {
-            swiper: swiper,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
-<script>
-    var swiper = new Swiper(".teamswiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        centeredSlides: true,
-        effect: "coverflow", // Menambahkan efek coverflow
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-        },
-        speed: 800, // Kecepatan transisi
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 40
-            }
-        }
-    });
-</script>
-<style>
-    .swiper-wrapper {
-        height: max-content !important;
-
-        width: max-content;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        top: 25%;
-        z-index: 1000;
-    }
-
-    .swiper-button-next {
-        right: -0px !important;
-    }
-
-    .swiper-button-prev {
-        left: 0px !important;
-    }
-
-    .swiper-button-prev:after,
-    .swiper-rtl .swiper-button-next:after {
-        content: "" !important;
-    }
-
-    .mySwiper {
-        max-width: 320px !important;
-        margin: 0 auto !important;
-    }
-
-    .swiper-button-next:after,
-    .swiper-rtl .swiper-button-prev:after {
-        content: "" !important;
-    }
-
-    .mySwiper .swiper-slide.swiper-slide-thumb-active>.swiper-slide\:w-16 {
-        --tw-scale-x: 1;
-        --tw-scale-y: 1;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    }
-
-    .mySwiper .swiper-slide.swiper-slide-thumb-active>.swiper-slide\:border-indigo-600 {
-        --tw-border-opacity: 1;
-        border-color: rgb(79 70 229 / var(--tw-border-opacity));
-    }
-
-    .teamswiper .swiper-wrapper {
-        height: max-content !important;
-        padding-bottom: 64px !important;
-    }
-
-    .teamswiper .swiper-horizontal>.swiper-scrollbar,
-    .teamswiper .swiper-scrollbar.swiper-scrollbar-horizontal {
-        max-width: 140px !important;
-        height: 3px !important;
-        bottom: 25px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-
-    .teamswiper .swiper-pagination-fraction {
-        bottom: 0 !important;
-        padding-top: 16px !important;
-    }
-
-    .teamswiper .swiper-slide.swiper-slide-active>.slide\:border-indigo-600 {
-        --tw-border-opacity: 1;
-        border-color: rgb(79 70 229 / var(--tw-border-opacity));
-    }
-
-    .teamswiper .swiper-pagination-total {
-        color: rgb(156 163 175) !important;
-    }
-
-    .teamswiper .swiper-scrollbar-drag {
-        background: rgb(79 70 229);
-    }
-
-    .teamswiper .swiper-pagination-fraction {
-        bottom: 0 !important;
-    }
-
-    .teamswiper .swiper-button-prev:after,
-    .teamswiper .swiper-rtl .swiper-button-next:after {
-        content: '' !important;
-    }
-
-    .teamswiper .swiper-button-prev {
-        top: 93% !important;
-        left: 35% !important;
-        z-index: 100 !important;
-    }
-
-    .teamswiper .swiper-button-next {
-        top: 93% !important;
-        right: 35% !important;
-        z-index: 100 !important;
-    }
-
-    .teamswiper .swiper-button-next:after,
-    .teamswiper .swiper-rtl .swiper-button-prev:after {
-        content: '' !important;
-    }
-
-    .teamswiper .swiper-button-next svg,
-    .teamswiper .swiper-button-prev svg {
-        width: 24px !important;
-        height: 24px !important;
-    }
-
-    .swiper-slide {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .swiper-slide img {
-        width: 100%;
-        height: auto;
-        max-width: 300px; /* Sesuaikan dengan kebutuhan */
-        max-height: 400px; /* Sesuaikan dengan kebutuhan */
-        object-fit: cover;
-    }
-
-    .teamswiper {
-        width: 100%;
-        padding: 50px 0;
-        overflow: hidden;
-    }
-
-    .teamswiper .swiper-slide {
-        transition: all 0.3s ease;
-        transform: scale(0.8);
-        opacity: 0.5;
-    }
-
-    .teamswiper .swiper-slide-active {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    .teamswiper .swiper-button-next,
-    .teamswiper .swiper-button-prev {
-        background-color: #fff;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-
-    .teamswiper .swiper-button-next:hover,
-    .teamswiper .swiper-button-prev:hover {
-        background-color: #f3f4f6;
-        transform: scale(1.1);
-    }
-
-    .teamswiper .swiper-pagination-bullet {
-        transition: all 0.3s ease;
-        background: #666;
-        opacity: 0.5;
-    }
-
-    .teamswiper .swiper-pagination-bullet-active {
-        opacity: 1;
-        background: #007aff;
-        transform: scale(1.2);
-    }
-
-    .swiper-slide img {
-        transition: all 0.3s ease;
-    }
-
-    .swiper-slide:hover img {
-        transform: scale(1.05);
-    }
-</style>
-
+<script src="src/script.js"></script>
+</body>
 </html>
