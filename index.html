@@ -7,6 +7,7 @@
     <link href="./dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/swiper-custom.css"> <!-- Add this line -->
     <title>iQuarium</title>
 </head>
 <body>
@@ -139,7 +140,7 @@
                 <div class="w-full flex-col justify-start lg:items-start items-center gap-6 inline-flex">
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                         <!-- Subtitle -->
-                        <h2 class="text-primary text-4xl font-bold font-manrope leading-normal lg:text-start text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">
+                        <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">
                             Jelajahi Keindahan Akuarium Bersama Kami
                         </h2>
                         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
@@ -177,8 +178,7 @@
     <section id="features" class="min-h-screen flex items-center justify-center py-16">
         <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full flex-col justify-start items-center lg:gap-11 gap-8 inline-flex">
-                <div class="w-full flex-col justify-start items-center gap-2.5 flex">
-                    <h2 class="text-center text-gray-900 text-4xl font-bold font-manrope leading-normal">Features</h2>
+                <h2 class="text-primary text-4xl font-bold font-manrope leading-normal lg:text-start text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">Features</h2>
                     <p class="max-w-4xl mx-auto text-center text-gray-500 text-lg font-normal leading-8">iQuarium memiliki fitur-fitur yang dirancang khusus  untuk  memenuhi kebutuhan para penggemar ikan hias, pembudidaya, dan pemula yang ingin memulai hobi merawat akuarium. </p>
                 </div>
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-start items-start gap-8">
@@ -220,8 +220,8 @@
             <!-- Header Section -->
             <div class="flex flex-col items-center justify-center w-full">
                 <div class="mb-8 sm:mb-16">
-                    <h2 class="font-manrope text-3xl sm:text-4xl text-center font-bold text-gray-900 mb-4 sm:mb-6">Meet Our Team</h2>
-                    <p class="text-base sm:text-lg text-gray-500 text-center max-w-[95%] sm:max-w-[90%] mx-auto md:max-w-none">
+                    <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">Meet Our Team</h2>
+                    <p class="text-base sm:text-lg text-gray-500 text-center mx-auto md:max-w-none">
                         Kami adalah tim yang berdedikasi untuk mengembangkan platform iQuarium dengan penuh semangat dan inovasi
                     </p>
                 </div>
@@ -447,7 +447,7 @@
                 <div class="flex flex-col gap-10">
                     <div class="flex flex-col gap-6">
                         <div class="text-center mb-20"></div>
-                        <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start"style="text-align: center;">Our History</h2>
+                        <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">Our History</h2>
                         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                             Kami adalah mahasiswa yang bergerak di bidang <em>Software Engineering</em>. Kami memiliki latar belakang yang berbeda-beda, namun kami menyatukan ide dan pemikiran kami dan terbentuklah kelompok <em>Anomali</em>. Anomali memiliki tugas untuk menyeselesaikan masalah bagi para pembudidaya ikan hias yang ingin memulai bisnis mereka, yang dimana permasalah tersebut tedapat pada minimnya informasi mengenai budidaya ikan hias yang baik dan benar. Hal tersebut menjadi tantangan kami namun kami berdedikasi untuk menyediakan informasi yang lengkap dan benar mengenai budidaya ikan hias, mulai dari pelatihan awal hingga menyediakan kebutuhan pembudidayaan.
                         </p>
@@ -457,13 +457,58 @@
         </div>
     </section>
     <!-- History Section Close -->
+<!-- Testimonial Section -->
+<section id="testimonial" class="py-16 bg-white">
+    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center">Testimonial</h2>
+            <p class="text-gray-500 mt-4">Apa yang mereka katakan tentang iQuarium</p>
+        </div>
+
+        <!-- Testimonial Slider -->
+        <div class="testimonial-swiper">
+            <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-[30px] p-8 border-2 border-primary shadow-lg">
+                        <p class="text-gray-600 mb-6">"iQuarium sangat membantu saya dalam memulai bisnis budidaya ikan hias. Informasinya lengkap dan mudah dipahami."</p>
+                        <div class="flex flex-col items-center">
+                            <img src="dist/image/testimonial1.jpg" alt="User" class="w-20 h-20 rounded-full object-cover mb-4">
+                            <h4 class="text-xl font-semibold text-gray-900">Ahmad Budiman</h4>
+                            <p class="text-sm text-primary">Pembudidaya Ikan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-[30px] p-8 border-2 border-primary shadow-lg">
+                        <p class="text-gray-600 mb-6">"Platform yang luar biasa untuk belajar tentang pemeliharaan ikan hias. Saya mendapatkan banyak pengetahuan baru."</p>
+                        <div class="flex flex-col items-center">
+                            <img src="dist/image/testimonial2.jpg" alt="User" class="w-20 h-20 rounded-full object-cover mb-4">
+                            <h4 class="text-xl font-semibold text-gray-900">Sarah Wijaya</h4>
+                            <p class="text-sm text-primary">Penghobi Ikan Hias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
 
    <!-- Contact Section -->
    <section id="contact" class="min-h-screen flex items-center justify-center py-16 bg-white text-gray-900">
     <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto pt-20">
         <!-- Section Header -->
         <div class="text-center mb-20">
-            <h2 class="text-4xl font-bold mt-2 mb-4 text-indigo-600">Contact Us</h2>
+            <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center animate-text bg-gradient-to-r from-primary via-indigo-500 to-primary bg-clip-text text-transparent bg-300% hover:bg-indigo-600 transition-colors duration-300">Contact Us</h2>
             <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6 rounded-full"></div>
             <p class="text-gray-600 max-w-3xl mx-auto text-lg mb-8">
                 Kami tidak bisa membantu menyelesaikan masalah Anda jika Anda tidak memberi tahu kami!

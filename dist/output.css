@@ -1643,3 +1643,39 @@ body {
 .btn-hover-effect:hover {
     background-color: #172554; /* Warna saat hover */
 }
+.testimonial-swiper {
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+
+
+.testimonial-swiper {
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.testimonial-swiper .swiper-slide {
+  opacity: 0.4;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+  color: #0051FF;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background: #0051FF;
+}
