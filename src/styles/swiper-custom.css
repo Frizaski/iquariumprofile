@@ -6,29 +6,19 @@
 
 .testimonial-swiper .swiper-slide {
     height: auto;
-    padding: 30px 20px;
+    opacity: 0.7;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
 }
 
-.testimonial-swiper .swiper-slide > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.testimonial-swiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
 }
 
-.testimonial-swiper .swiper-button-next,
-.testimonial-swiper .swiper-button-prev {
-    color: #0455BF;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.testimonial-swiper .swiper-button-next:after,
-.testimonial-swiper .swiper-button-prev:after {
-    font-size: 20px;
+.testimonial-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 2rem;
 }
 
 .testimonial-swiper .swiper-pagination-bullet {
@@ -39,15 +29,25 @@
 }
 
 .testimonial-swiper .swiper-pagination-bullet-active {
-    background: #0455BF;
+    background: #4F46E5;
     transform: scale(1.2);
 }
 
-/* Animasi hover untuk card testimonial */
-.testimonial-swiper .swiper-slide > div {
+/* Hover effect untuk card */
+.testimonial-swiper .swiper-slide > div > div {
     transition: all 0.3s ease;
 }
 
-.testimonial-swiper .swiper-slide > div:hover {
+.testimonial-swiper .swiper-slide > div > div:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-swiper img {
+    border-color: #9CA3AF; /* gray-400 */
+    transition: all 0.3s ease;
+}
+
+.testimonial-swiper img:hover {
+    border-color: #6366F1; /* indigo-500 */
 } 
