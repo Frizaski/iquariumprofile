@@ -113,9 +113,49 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-}); 
-// Inisialisasi Testimonial Swiper
-document.addEventListener('DOMContentLoaded', function () {
+
+    fetchFeedbacks();
+});
+
+async function fetchFeedbacks() {
+    try {
+        const response = await fetch('http://localhost:8000/api/feedback');
+        const result = await response.json();
+        
+        if (result.success) {
+            updateTestimonialSlides(result.data);
+        }
+    } catch (error) {
+        console.error('Error fetching feedbacks:', error);
+    }
+}
+
+function updateTestimonialSlides(feedbacks) {
+    const swiperWrapper = document.getElementById('testimonialWrapper');
+    swiperWrapper.innerHTML = '';
+
+    feedbacks.forEach(feedback => {
+        const slide = `
+            <div class="swiper-slide">
+                <div class="flex justify-center">
+                    <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
+                            <h4 class="text-lg font-semibold">${feedback.user.name}</h4>
+                            <p class="text-sm opacity-80">Pengguna iQuarium</p>
+                        </div>
+                        <div class="p-8 text-center">
+                            <p class="text-gray-700">
+                                ${feedback.komentar}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        swiperWrapper.innerHTML += slide;
+    });
+
+    // Reinisialisasi Swiper
     var testimonialSwiper = new Swiper(".testimonial-swiper", {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -135,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-});
+}
 
 
 

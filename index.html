@@ -465,89 +465,25 @@
     <!-- History Section Close -->
     <!-- Testimonial Section -->
     <section id="testimonial" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-primary text-4xl font-bold font-manrope leading-snug">Testimonial</h2>
-                <p class="text-gray-600 mt-4">Apa yang mereka katakan tentang iQuarium</p>
+        <div class="container mx-auto px-4 py-16">
+            <!-- Judul Testimonial -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Testimonial</h2>
+                <p class="text-gray-600">Apa yang mereka katakan tentang iQuarium</p>
             </div>
 
             <!-- Testimonial Slider -->
             <div class="swiper testimonial-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
-                    <div class="swiper-slide">
-                        <div class="flex justify-center">
-                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
-                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
-                                    <h4 class="text-lg font-semibold">Ahmad Budiman</h4>
-                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
-                                </div>
-                                <div class="p-8 text-center">
-                                    <p class="text-gray-700">
-                                        iQuarium sangat membantu saya dalam memulai bisnis budidaya ikan hias. Informasinya lengkap dan mudah dipahami.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="swiper-slide">
-                        <div class="flex justify-center">
-                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
-                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
-                                    <h4 class="text-lg font-semibold">Sarah Wijaya</h4>
-                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
-                                </div>
-                                <div class="p-8 text-center">
-                                    <p class="text-gray-700">
-                                        Platform yang luar biasa untuk belajar tentang pemeliharaan ikan hias.
-                                        Saya mendapatkan banyak pengetahuan baru.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="swiper-slide">
-                        <div class="flex justify-center">
-                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
-                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
-                                    <h4 class="text-lg font-semibold">John Doe</h4>
-                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
-                                </div>
-                                <div class="p-8 text-center">
-                                    <p class="text-gray-700">
-                                        Platform yang luar biasa dan menyenangkan untuk belajar tentang ikan hias.
-                                        Saya ingin lebih banyak pengguna yang menggunakan iQuarium!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="swiper-slide">
-                        <div class="flex justify-center">
-                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
-                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
-                                    <h4 class="text-lg font-semibold">Catherina Vallencia</h4>
-                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
-                                </div>
-                                <div class="p-8 text-center">
-                                    <p class="text-gray-700">
-                                        Loremipsum asalole asoy uhuy banget deh apps ini kacau fren mantap cakep co sebenernya ya ga fren pokonya ini adalah apk yang sangat membara
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="swiper-wrapper" id="testimonialWrapper">
+                    <!-- Loading state -->
+                    <div class="text-center py-10" id="loadingState">
+                        <p>Loading testimonials...</p>
                     </div>
                 </div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination mt-8"></div>
+                <!-- Navigasi -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -639,5 +575,157 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!-- Your Custom Script -->
 <script src="src/script.js"></script>
+<script>
+let swiper;
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetchFeedbacks();
+});
+
+async function fetchFeedbacks() {
+    const testimonialWrapper = document.getElementById('testimonialWrapper');
+    
+    try {
+        const response = await fetch('http://192.168.1.9:8000/api/feedback');
+        const result = await response.json();
+        
+        if (result.success && result.data) {
+            testimonialWrapper.innerHTML = '';
+
+            result.data.forEach(feedback => {
+                const slide = `
+                    <div class="swiper-slide p-4">
+                        <div class="testimonial-card bg-white transform transition duration-300">
+                            <div class="p-6 flex flex-col items-center">
+                                <!-- Testimonial Text -->
+                                <div class="text-center mb-8">
+                                    <p class="text-gray-600 text-lg">
+                                        "${feedback.komentar}"
+                                    </p>
+                                </div>
+                                
+                                <!-- Divider -->
+                                <div class="w-16 h-0.5 bg-gray-200 mb-6"></div>
+                                
+                                <!-- User Info Section -->
+                                <div class="text-center">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-1">${feedback.user.name}</h4>
+                                    <p class="text-sm text-gray-500" margin-bottom="10">Pengguna iQuarium</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                testimonialWrapper.innerHTML += slide;
+            });
+
+            if (swiper) {
+                swiper.destroy();
+            }
+
+            swiper = new Swiper(".testimonial-swiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: true,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching feedbacks:', error);
+        testimonialWrapper.innerHTML = '<div class="text-center py-10 text-red-500">Gagal memuat testimonial</div>';
+    }
+}
+</script>
+
+<style>
+
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+    
+.testimonial-card:hover {
+    border-radius: 12rem;
+}
+.testimonial-swiper {
+    padding: 20px 40px;
+    overflow: hidden;
+}
+
+.testimonial-swiper .swiper-slide {
+    height: 100%;
+}
+
+/* Card styling */
+.testimonial-swiper .swiper-slide > div {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-slide > div:hover {
+    border-radius: 1rem;
+}
+
+/* Navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #3B82F6;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #CBD5E1;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #3B82F6;
+    transform: scale(1.2);
+}
+
+@media (max-width: 640px) {
+    .testimonial-swiper {
+        padding: 20px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+</style>
 </body>
 </html>
