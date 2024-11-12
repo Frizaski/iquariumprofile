@@ -114,28 +114,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
-// Testimonial Swiper initialization
-var testimonialSwiper = new Swiper(".testimonial-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 20
+// Inisialisasi Testimonial Swiper
+document.addEventListener('DOMContentLoaded', function () {
+    var testimonialSwiper = new Swiper(".testimonial-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30
-        },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 30
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
         }
-    }
+    });
 });
+
+
+

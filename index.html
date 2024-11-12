@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="src/styles/swiper-custom.css"> <!-- Add this line -->
     <title>iQuarium</title>
+    <style>
+        h4 {
+            display: block; /* Pastikan elemen ditampilkan */
+            color: black; /* Ubah warna untuk memastikan terlihat */
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar Open -->
@@ -458,79 +464,93 @@
     </section>
     <!-- History Section Close -->
     <!-- Testimonial Section -->
-<section id="testimonial" class="py-16 bg-white">
-    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-primary text-4xl font-bold font-manrope leading-normal text-center">Testimonial</h2>
-            <p class="text-gray-500 mt-4">Apa yang mereka katakan tentang iQuarium</p>
-        </div>
-
-        <!-- Testimonial Slider -->
-        <div class="testimonial-swiper">
-            <div class="swiper-wrapper">
-                <!-- Testimonial 1 -->
-                <div class="swiper-slide">
-                    <div class="flex justify-center">
-                        <div class="block max-w-[18rem] rounded-lg bg-indigo-600 text-white shadow-lg">
-                            <div class="border-b-2 border-white/20 px-6 py-3">
-                                <h4 class="text-lg font-semibold">Ahmad Budiman</h4>
-                            </div>
-                            <div class="p-6">
-                                <h5 class="mb-2 text-xl font-medium leading-tight">
-                                    Pengguna iQuarium
-                                </h5>
-                                <p class="text-base">
-                                    iQuarium sangat membantu saya dalam memulai bisnis budidaya ikan hias. Informasinya lengkap dan mudah dipahami.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="swiper-slide">
-                    <div class="flex justify-center">
-                        <div class="block max-w-[18rem] rounded-lg bg-indigo-600 text-white shadow-lg">
-                            <div class="border-b-2 border-white/20 px-6 py-3">
-                                <h4 class="text-lg font-semibold">Sarah Wijaya</h4>
-                            </div>
-                            <div class="p-6">
-                                <h5 class="mb-2 text-xl font-medium leading-tight">
-                                    Pengguna iQuarium
-                                </h5>
-                                <p class="text-base">
-                                    Platform yang luar biasa untuk belajar tentang pemeliharaan ikan hias. Saya mendapatkan banyak pengetahuan baru.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="swiper-slide">
-                    <div class="flex justify-center">
-                        <div class="block max-w-[18rem] rounded-lg bg-indigo-600 text-white shadow-lg">
-                            <div class="border-b-2 border-white/20 px-6 py-3">
-                                <h4 class="text-lg font-semibold">John Doe</h4>
-                            </div>
-                            <div class="p-6">
-                                <h5 class="mb-2 text-xl font-medium leading-tight">
-                                    Pengguna iQuarium
-                                </h5>
-                                <p class="text-base">
-                                    Platform yang luar biasa dan menyenangkan untuk belajar tentang ikan hias. Saya ingin lebih banyak pengguna yang menggunakan iQuarium!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="testimonial" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-primary text-4xl font-bold font-manrope leading-snug">Testimonial</h2>
+                <p class="text-gray-600 mt-4">Apa yang mereka katakan tentang iQuarium</p>
             </div>
-            <!-- Add pagination -->
-            <div class="swiper-pagination mt-8"></div>
+
+            <!-- Testimonial Slider -->
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="flex justify-center">
+                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
+                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
+                                    <h4 class="text-lg font-semibold">Ahmad Budiman</h4>
+                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
+                                </div>
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        iQuarium sangat membantu saya dalam memulai bisnis budidaya ikan hias. Informasinya lengkap dan mudah dipahami.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="flex justify-center">
+                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
+                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
+                                    <h4 class="text-lg font-semibold">Sarah Wijaya</h4>
+                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
+                                </div>
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Platform yang luar biasa untuk belajar tentang pemeliharaan ikan hias.
+                                        Saya mendapatkan banyak pengetahuan baru.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="flex justify-center">
+                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
+                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
+                                    <h4 class="text-lg font-semibold">John Doe</h4>
+                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
+                                </div>
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Platform yang luar biasa dan menyenangkan untuk belajar tentang ikan hias.
+                                        Saya ingin lebih banyak pengguna yang menggunakan iQuarium!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="flex justify-center">
+                            <div class="block max-w-sm rounded-xl bg-white shadow-lg transform hover:scale-105 transition duration-300">
+                                <div class="bg-indigo-500 text-white p-6 rounded-t-xl text-center">
+                                    <h4 class="text-lg font-semibold">Catherina Vallencia</h4>
+                                    <p class="text-sm opacity-80">Pengguna iQuarium</p>
+                                </div>
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Loremipsum asalole asoy uhuy banget deh apps ini kacau fren mantap cakep co sebenernya ya ga fren pokonya ini adalah apk yang sangat membara
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-8"></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     
 
    <!-- Contact Section -->
@@ -615,7 +635,9 @@
 <!-- Footer Close -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
+<!-- Include Swiper.js -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- Your Custom Script -->
 <script src="src/script.js"></script>
 </body>
 </html>
