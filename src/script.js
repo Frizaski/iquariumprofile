@@ -4,10 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = menuButton.querySelector('svg');
 
     menuButton.addEventListener('click', function() {
-        // Toggle menu visibility
         menu.classList.toggle('hidden');
-
-        // Toggle button icon
         if (menu.classList.contains('hidden')) {
             menuIcon.setAttribute('viewBox', '0 0 17 14');
             menuIcon.innerHTML = `
@@ -21,19 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Inisialisasi EmailJS
     emailjs.init("dsuLOXyydWGukQ9sc");
 
-    // Fungsi untuk mengirim email
     function sendMail(event) {
-        event.preventDefault(); // Mencegah form dari reload halaman
-
+        event.preventDefault();
         emailjs.sendForm('service_2snthmg', 'template_bawnm05', '#contactForm')
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 alert('Pesan berhasil dikirim!');
-                
-                // Mengosongkan formulir
                 document.getElementById('contactForm').reset();
             }, function(error) {
                 console.log('FAILED...', error);
@@ -41,20 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    // Pastikan form memanggil fungsi sendMail
     document.getElementById('contactForm').onsubmit = sendMail;
-    
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
     });
 
-    // Swiper initialization
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: -10,
@@ -115,6 +104,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     fetchFeedbacks();
+
+    // Video pergantian saat full screen
+    const videoElement = document.getElementById('videoElement');
+    const alternateVideoSource = './dist/video/fullver.mp4';
+
+    function switchToAlternateVideo() {
+        videoElement.pause();
+        videoElement.muted = false;
+        videoElement.querySelector('source').src = alternateVideoSource;
+        videoElement.load();
+        videoElement.play();
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement === videoElement) {
+            videoElement.style.width = '100%';
+            videoElement.style.height = '100%';
+            videoElement.style.objectFit = 'contain';
+            switchToAlternateVideo();
+        } else {
+            videoElement.style.width = '';
+            videoElement.style.height = '';
+            videoElement.style.objectFit = '';
+            videoElement.pause();
+            videoElement.muted = true;
+            videoElement.querySelector('source').src = './dist/video/iquarium.mp4';
+            videoElement.load();
+            videoElement.play();
+        }
+    });
+
+    videoElement.addEventListener('click', () => {
+        if (videoElement.requestFullscreen) {
+            videoElement.requestFullscreen();
+        }
+    });
 });
 
 async function fetchFeedbacks() {
@@ -155,7 +180,6 @@ function updateTestimonialSlides(feedbacks) {
         swiperWrapper.innerHTML += slide;
     });
 
-    // Reinisialisasi Swiper
     var testimonialSwiper = new Swiper(".testimonial-swiper", {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -176,6 +200,3 @@ function updateTestimonialSlides(feedbacks) {
         }
     });
 }
-
-
-

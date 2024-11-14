@@ -34,13 +34,26 @@
 }
 
 /* Hover effect untuk card */
-.testimonial-swiper .swiper-slide > div > div {
+.testimonial-swiper .swiper-slide > div {
+    height: 100%;
     transition: all 0.3s ease;
+    border-radius: 1rem;
+    padding: 20px;
 }
 
-.testimonial-swiper .swiper-slide > div > div:hover {
-    transform: translateY(-10px);
+.testimonial-swiper .swiper-slide > div:hover {
+    border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.testimonial-swiper .swiper-slide > div h4 {
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-swiper .swiper-slide > div p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 
 .testimonial-swiper img {
