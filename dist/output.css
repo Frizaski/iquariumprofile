@@ -1686,84 +1686,14 @@ body {
 .features-section {
   background: linear-gradient(to bottom right, #E0E7FF, #A5B4FC);
 }
+
 #navbar-sticky {
-  display: none; /* Sembunyikan navbar secara default */
+  margin-top: 10px; /* Add space between toggle button and navbar */
 }
 
-#navbar-sticky.show {
-  display: block; /* Tampilkan navbar ketika toggle diaktifkan */
-}
-
-@media (max-width: 768px) {
-  #navbar-sticky {
-      position: absolute; /* Posisi absolute untuk navbar */
-      top: 50px; /* Sesuaikan dengan tinggi tombol toggle */
-      left: 0;
-      right: 0;
-      background-color: rgba(255, 255, 255, 0.0); /* Warna latar belakang transparan */
-      z-index: 10; /* Pastikan navbar di atas konten lainnya */
-      border-radius: 8px; /* Tambahkan border-radius untuk sudut yang lebih halus */
-      padding: 10px 0; /* Padding untuk navbar */
-  }
-}
-
-#navbar-sticky ul {
-    padding: 0; /* Hapus padding default */
-}
-
-#navbar-sticky li {
-    margin: 5px 0; /* Jarak antar item navbar */
-}
-
-#navbar-sticky a {
-    font-size: 14px; /* Ukuran font lebih kecil */
-    color: #000; /* Warna teks */
-    transition: color 0.3s; /* Transisi warna */
-}
-
-#navbar-sticky a:hover {
-    color: #0051FF; /* Warna saat hover */
+/* Optional: Center the navbar items */
+.md\\:flex {
+  justify-content: center; /* Center items in the navbar */
 }
 
 /* Gaya untuk tampilan desktop */
-@media (min-width: 768px) {
-  #navbar-sticky {
-    display: flex; /* Tampilkan navbar di desktop */
-    position: static; /* Posisi statis untuk desktop */
-    background-color: transparent; /* Latar belakang transparan */
-    padding: 0; /* Hapus padding */
-    border-radius: 0; /* Hapus border-radius */
-}
-
-    #navbar-sticky ul {
-        flex-direction: row; /* Menu horizontal di desktop */
-    }
-
-    #navbar-sticky li {
-        margin: 0 15px; /* Jarak antar item navbar */
-    }
-
-    #navbar-sticky a {
-        font-size: 16px; /* Ukuran font lebih besar untuk desktop */
-    }
-}
-/* Animasi untuk tombol */
-.menu-button {
-  transition: transform 0.3s ease;
-}
-
-.menu-button:active {
-  transform: scale(0.95);/* Efek mengecil saat ditekan */
-}
-
-/* Animasi untuk navbar */
-#navbar-sticky {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(-10px); /* Posisi awal navbar */
-  opacity: 0; /* Sembunyikan navbar */
-}
-
-#navbar-sticky.show {
-  transform: translateY(0); /* Kembalikan ke posisi normal */
-  opacity: 1; /* Tampilkan navbar */
-}
