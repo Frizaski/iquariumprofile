@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+    const menuButton = document.querySelector('.burger-icon');
+    const closeButton = document.querySelector('.close-button');
     const menu = document.getElementById('navbar-sticky');
-    const menuIcon = menuButton.querySelector('svg');
 
     menuButton.addEventListener('click', function() {
         menu.classList.toggle('hidden');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     emailjs.init("dsuLOXyydWGukQ9sc");
-
+z
     function sendMail(event) {
         event.preventDefault();
         emailjs.sendForm('service_2snthmg', 'template_bawnm05', '#contactForm')
@@ -200,3 +200,9 @@ function updateTestimonialSlides(feedbacks) {
         }
     });
 }
+const toggleMenu = document.getElementById("toggleMenu");
+const navbarSticky = document.getElementById("navbar-sticky");
+
+toggleMenu.addEventListener("click", () => {
+    navbarSticky.classList.toggle("active");
+});
