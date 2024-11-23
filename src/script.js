@@ -102,6 +102,7 @@ z
             }
         }
     });
+    
 
     fetchFeedbacks();
 
@@ -114,7 +115,7 @@ z
         videoElement.muted = false;
         videoElement.querySelector('source').src = alternateVideoSource;
         videoElement.load();
-        videoElement.play();
+        videoElement.play();    
     }
 
     document.addEventListener('fullscreenchange', () => {
@@ -200,9 +201,8 @@ function updateTestimonialSlides(feedbacks) {
         }
     });
 }
-const toggleMenu = document.getElementById("toggleMenu");
-const navbarSticky = document.getElementById("navbar-sticky");
-
-toggleMenu.addEventListener("click", () => {
-    navbarSticky.classList.toggle("active");
+document.getElementById("toggleMenu").addEventListener("click", function () {
+    const menu = document.getElementById("navbar-menu");
+    menu.classList.toggle("hidden"); // Tampilkan/sembunyikan menu
 });
+

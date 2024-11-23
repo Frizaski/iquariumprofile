@@ -15,34 +15,34 @@
             color: rgb(0, 0, 0); /* Ubah warna untuk memastikan terlihat */
         }
     </style>
-<header class="bg-transparent backdrop-blur fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+<header class="bg-transparent fixed w-full z-20 top-0 border-b border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="./dist/image/iquarium-logo.png" class="h-12" alt="iQuarium Logo">
-        </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <!-- Toggle Button (Mobile Only) -->
-            <button id="toggleMenu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
-            </button>
-        </div>
-        <!-- Navbar Menu -->
-        <div id="navbar-sticky" class="hidden flex-col p-4 md:flex md:flex-row md:space-x-8 rtl:space-x-reverse md:p-0">
-            <ul class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8">
-                <li><a href="#home" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Home</a></li>
-                <li><a href="#about" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">About</a></li>
-                <li><a href="#features" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Features</a></li>
-                <li><a href="#team" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Team</a></li>
-                <li><a href="#history" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">History</a></li>
-                <li><a href="#contact" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Contact</a></li>
-            </ul>
-        </div>
+      <!-- Logo -->
+      <a href="#home" class="flex items-center md:ml-20 md:mr-20">
+        <img src="./dist/image/iquarium-logo.png" class="h-10 md:h-12" alt="iQuarium Logo">
+      </a>
+  
+      <!-- Toggle Button (Mobile Only) -->
+      <button id="toggleMenu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none md:hidden">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+  
+      <!-- Navbar Links -->
+      <ul id="navbar-menu" class="hidden flex-col md:flex md:flex-row md:space-x-8 rtl:space-x-reverse w-full md:w-auto">
+        <li><a href="#home" class="block py-2 px-3 text-black hover:text-primary">Home</a></li>
+        <li><a href="#about" class="block py-2 px-3 text-black hover:text-primary">About</a></li>
+        <li><a href="#features" class="block py-2 px-3 text-black hover:text-primary">Features</a></li>
+        <li><a href="#team" class="block py-2 px-3 text-black hover:text-primary">Team</a></li>
+        <li><a href="#history" class="block py-2 px-3 text-black hover:text-primary">History</a></li>
+        <li><a href="#contact" class="block py-2 px-3 text-black hover:text-primary">Contact</a></li>
+      </ul>
     </div>
-</header>
-    <!-- Home Section -->
+  </header>
+  
+      <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center py-16" style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); padding-top: 100px;"> <!-- Tambahkan padding-top -->
         <!-- Background Decorative Elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -638,8 +638,9 @@ async function fetchFeedbacks() {
     });
 </script>
 
-<style>
 
+
+<style>
 .testimonial-card {
     transition: all 0.3s ease;
 }

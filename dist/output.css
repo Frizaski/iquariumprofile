@@ -1582,6 +1582,7 @@ html {
     width: 100%;
     padding: 50px 0;
     overflow: hidden;
+    height: auto;
 }
 
 .teamswiper .swiper-slide {
@@ -1687,56 +1688,67 @@ body {
   background: linear-gradient(to bottom right, #E0E7FF, #A5B4FC);
 }
 
+/* Default: Navbar Tersembunyi untuk Mobile */
+/* Header */
+
+
+/* Navbar Links */
 #navbar-sticky {
-  margin-top: 10px; /* Add space between toggle button and navbar */
+  display: flex;
+  justify-content: center; /* Menu navigasi sejajar di tengah */
+  align-items: center;
+  gap: 24px; /* Jarak antar menu */
 }
 
-/* Optional: Center the navbar items */
-.md\\:flex {
-  justify-content: center; /* Center items in the navbar */
+#navbar-sticky a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333; /* Warna teks hitam */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Gaya untuk tampilan desktop */
-/* Mobile Menu - Tersembunyi Secara Default */
-/* Transparansi Navbar Menu */
-#navbar-sticky {
+#navbar-sticky a:hover {
+  color: #007bff; /* Warna hover */
+}
+
+/* Responsif: Nonaktifkan navbar sticky untuk mobile */
+@media (max-width: 768px) {
+  #navbar-sticky {
     display: none;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.5); /* Transparansi lebih ringan */
-    backdrop-filter: blur(10px); /* Efek blur untuk elemen di belakang */
-    position: absolute;
-    top: 100%; /* Tepat di bawah header */
-    left: 0;
-    width: 100%;
-    padding: 16px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
-    z-index: 50;
-    border-radius: 8px; /* Opsional, agar lebih lembut */
+  }
+}
+/* Mobile Menu */
+/* Mobile Menu */
+#navbar-menu {
+  background-color: rgba(255, 255, 255, 0.95); /* Background transparan */
+  position: absolute;
+  top: 100%; /* Tepat di bawah header */
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  border-radius: 8px; /* Sudut bulat */
+  z-index: 50;
+  margin-left: 1rem;
 }
 
-/* Menu Aktif */
-#navbar-sticky.active {
-    display: flex;
+#navbar-menu a {
+  padding: 10px 16px; /* Padding link menu */
+  text-align: center;
 }
 
-/* Styling Links */
-#navbar-sticky ul li a {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    padding: 10px 0;
-    display: block;
-    text-align: center;
-    transition: color 0.3s ease; /* Animasi lembut */
-}
-
-#navbar-sticky ul li a:hover {
-    color: #007bff; /* Warna hover */
-}
-
-/* Untuk memastikan hanya digunakan di Mobile */
+/* Sembunyikan menu default di desktop */
 @media (min-width: 768px) {
-    #navbar-sticky {
-        display: none; /* Nonaktifkan untuk layar lebih besar */
-    }
+  #navbar-menu {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      width: auto;
+  }
 }
+@media (max-width: 767px) {
+  a.flex.items-center {
+    margin-right: 15rem; }
+    
+  }
