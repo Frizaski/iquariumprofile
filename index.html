@@ -30,14 +30,14 @@
             </button>
         </div>
         <!-- Navbar Menu -->
-        <div id="navbar-sticky" class="hidden md:flex md:w-auto mt-2">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-                <li><a href="#home" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Home</a></li>
-                <li><a href="#about" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">About</a></li>
-                <li><a href="#features" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Features</a></li>
-                <li><a href="#team" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Team</a></li>
-                <li><a href="#history" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">History</a></li>
-                <li><a href="#contact" class="block py-2 px-3 text-black hover:text-primary rounded md:bg-transparent md:p-0">Contact</a></li>
+        <div id="navbar-sticky" class="hidden w-full md:block md:w-auto">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
+                <li class="text-center"><a href="#home" class="block py-2 px-3 text-black hover:text-primary">Home</a></li>
+                <li class="text-center"><a href="#about" class="block py-2 px-3 text-black hover:text-primary">About</a></li>
+                <li class="text-center"><a href="#features" class="block py-2 px-3 text-black hover:text-primary">Features</a></li>
+                <li class="text-center"><a href="#team" class="block py-2 px-3 text-black hover:text-primary">Team</a></li>
+                <li class="text-center"><a href="#history" class="block py-2 px-3 text-black hover:text-primary">History</a></li>
+                <li class="text-center"><a href="#contact" class="block py-2 px-3 text-black hover:text-primary">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -704,6 +704,55 @@ async function fetchFeedbacks() {
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar-sticky {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 0.5rem 0.5rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #navbar-sticky.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+
+    #navbar-sticky ul {
+        background-color: transparent;
+        border: none;
+        width: 100%; /* Memastikan ul mengambil lebar penuh */
+    }
+
+    #navbar-sticky ul li {
+        border-bottom: 1px solid #f3f4f6;
+        text-align: center; /* Memastikan teks berada di tengah */
+        width: 100%; /* Memastikan li mengambil lebar penuh */
+    }
+
+    #navbar-sticky ul li:last-child {
+        border-bottom: none;
+    }
+
+    #navbar-sticky ul li a {
+        padding: 0.75rem 1rem;
+        display: block;
+        transition: all 0.3s ease;
+        text-align: center; /* Memastikan teks link berada di tengah */
+        width: 100%; /* Memastikan link mengambil lebar penuh */
+    }
+
+    #navbar-sticky ul li a:hover {
+        background-color: #f8fafc;
+        color: #4f46e5;
     }
 }
 </style>
