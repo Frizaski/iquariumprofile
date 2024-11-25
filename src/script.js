@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchProducts() {
         try {
-            const response = await fetch('https://anomalii.my.id/api/fishmart/');
+            const response = await fetch('https://anomalii.my.id/api/pelatihan/');
             const data = await response.json();
             console.log('Fetched data:', data); // Debugging
             return data.data;
@@ -180,13 +180,15 @@ document.addEventListener('DOMContentLoaded', function() {
             slide.className = 'swiper-slide';
             slide.innerHTML = `
                 <div class="bg-white rounded-lg p-4">
-                    <img src="${product.gambar_produk}" alt="${product.nama_produk}" 
-                         class="w-full h-64 object-cover rounded-lg mb-4">
-                    <h4 class="text-xl font-semibold mb-2">${product.nama_produk}</h4>
-                    <p class="text-gray-600 mb-2">${product.deskripsi_produk}</p>
+                    <img src="https://anomalii.my.id/storage/${product.gambar_pelatihan}" 
+                         alt="${product.judul}" 
+                         class="w-full h-64 object-cover rounded-lg mb-4"
+                         onerror="this.src='./dist/img/default-image.jpg'">
+                    <h4 class="text-xl font-semibold mb-2">${product.judul}</h4>
+                    <p class="text-gray-600 mb-2">${product.deskripsi_pelatihan}</p>
                     <div class="flex justify-between items-center">
                         <span class="text-primary font-bold">${formatPrice(product.harga)}</span>
-                        <span class="text-gray-500">Stok: ${product.stok}</span>
+                        <span class="text-gray-500">Oleh: ${product.user.nama}</span>
                     </div>
                 </div>
             `;
@@ -230,14 +232,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('productModal');
         if (modal) {
             modal.classList.remove('hidden');
-            window.currentModal = modal; // Gunakan window.currentModal
+            window.currentModal = modal;
             initializeProductSwiper();
         }
     };
 
     // Fungsi untuk menutup modal
     window.closeProductModal = function() {
-        if (window.currentModal) { // Gunakan window.currentModal
+        if (window.currentModal) {
             window.currentModal.classList.add('hidden');
             window.currentModal = null;
         }
@@ -251,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="relative min-h-screen flex items-center justify-center p-4">
                     <div class="bg-white w-full max-w-4xl rounded-2xl p-6">
                         <div class="flex justify-between items-center mb-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Produk Tersedia</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">Pelatihan Tersedia</h3>
                             <button onclick="closeProductModal()" class="text-gray-500 hover:text-gray-700">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -280,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function fetchFeedbacks() {
     try {
-        const response = await fetch('http://localhost:8000/api/feedback');
+        const response = await fetch('https://anomalii.my.id/api/feedback');
         const result = await response.json();
         
         if (result.success) {

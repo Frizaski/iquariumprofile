@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan iQuarium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-900">Pelatihan Tersedia</h1>
+                <a href="index.html" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Grid Pelatihan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="pelatihanGrid">
+                <!-- Pelatihan cards akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Detail Pelatihan -->
+    <div id="pelatihanDetailModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-4xl rounded-2xl p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900">Detail Pelatihan</h3>
+                    <button onclick="closePelatihanDetail()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="pelatihanDetailContent">
+                    <!-- Detail content akan diisi oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatPrice(price) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR'
+            }).format(price);
+        }
+
+        async function fetchPelatihan() {
+            try {
+                const response = await fetch('https://anomalii.my.id/api/pelatihan/');
+                const data = await response.json();
+                return data.data;
+            } catch (error) {
+                console.error('Error:', error);
+                return [];
+            }
+        }
+
+        function createPelatihanCard(pelatihan) {
+            return `
+                <div onclick="showPelatihanDetail(${JSON.stringify(pelatihan).replace(/"/g, '&quot;')})" 
+                     class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://anomalii.my.id/storage/${pelatihan.gambar_pelatihan}" 
+                         alt="${pelatihan.judul}" 
+                         class="w-full h-48 object-cover"
+                         onerror="this.src='./dist/img/default-image.jpg'">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">${pelatihan.judul}</h4>
+                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">${pelatihan.deskripsi_pelatihan}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-indigo-600 font-bold">${formatPrice(pelatihan.harga)}</span>
+                            <span class="text-gray-500 text-sm">Oleh: ${pelatihan.user.nama}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showPelatihanDetail(pelatihan) {
+            const modal = document.getElementById('pelatihanDetailModal');
+            const content = document.getElementById('pelatihanDetailContent');
+            
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://anomalii.my.id/storage/${pelatihan.gambar_pelatihan}" 
+                             alt="${pelatihan.judul}" 
+                             class="w-full h-72 object-cover rounded-lg"
+                             onerror="this.src='./dist/img/default-image.jpg'">
+                    </div>
+                    <div class="w-full md:w-1/2 space-y-4">
+                        <h2 class="text-2xl font-bold text-gray-900">${pelatihan.judul}</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="text-gray-600">Instruktur:</span>
+                            <span class="font-semibold">${pelatihan.user.nama}</span>
+                        </div>
+                        <div class="text-2xl font-bold text-indigo-600">
+                            ${formatPrice(pelatihan.harga)}
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-semibold">Deskripsi Pelatihan:</h3>
+                            <p class="text-gray-600">${pelatihan.deskripsi_pelatihan}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closePelatihanDetail() {
+            document.getElementById('pelatihanDetailModal').classList.add('hidden');
+        }
+
+        async function initialize() {
+            const pelatihan = await fetchPelatihan();
+            const grid = document.getElementById('pelatihanGrid');
+            
+            if (!pelatihan || pelatihan.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Tidak ada pelatihan tersedia</div>';
+                return;
+            }
+            
+            grid.innerHTML = pelatihan.map(createPelatihanCard).join('');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('pelatihanDetailModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closePelatihanDetail();
+            }
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
